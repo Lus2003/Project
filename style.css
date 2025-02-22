@@ -165,20 +165,20 @@ body {
     margin-left: 10px;
     content: "❤"; 
     color: black;
-    position: relative; /* For positioning the counter within the heart icon */
+    position: relative; 
 }
 
-.heart-counter {
-    font-size: 10px; /* Smaller font size for the counter */
-    color: white; /* White text color */
-    background-color: red; /* Red background */
-    border-radius: 50%; /* Round shape */
-    padding: 2px 5px; /* Padding to make it look like a badge */
-    position: absolute; /* Absolutely position within the heart */
-    top: -8px; /* Slightly above the heart icon */
-    right: -8px; /* Slightly to the right of the heart icon */
-    transform: scale(0.8); /* Slightly smaller scale */
-    z-index: 1; /* Ensure it appears on top */
+heart-counter {
+    font-size: 10px;
+    color: black; 
+    background-color: red; 
+    border-radius: 50%; 
+    padding: 2px 5px; 
+    position: absolute; 
+    top: -8px; 
+    right: -8px; 
+    transform: scale(0.8); 
+    z-index: 1; 
 }
 
 .heart-counter {
