@@ -7,8 +7,10 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f1f1f1;
+    background-color: #EFEFEF;
+    overflow-x: hidden; 
 }
+
 
 .container {
     width: 100%;
@@ -24,18 +26,18 @@ body {
 }
 
 .logo {
-    font-size: 70px; 
+    font-size: 70px;
     font-weight: bold;
-    color: black;  
+    color: #414141;
     letter-spacing: 2px;
-    font-family: 'Lobster', cursive; 
+    font-family: 'Lobster', cursive;
 }
 
 .nav {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .nav ul {
@@ -52,138 +54,238 @@ body {
 .nav a {
     font-size: 18px;
     text-decoration: none;
-    color: #333;
+    color: #414141;
     white-space: nowrap;
-    outline: none; 
-}
-
-.icons {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
 }
 
 .favorites, .cart {
-    font-size: 24px;
-    margin-left: 10px;
-    color: black;
+    position: relative;
+    font-size: 30px;
+    color: #414141;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.heart-zero, .cart-zero {
+    font-size: 14px;
+    background-color: #414141;
+    color: #EFEFEF;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+    font-weight: bold;
 }
 
 .hero {
     position: relative;
-    text-align: left;  
-    color: white;
+    text-align: left;
+    color: #EFEFEF;
 }
 
 .hero-image {
     width: 100%;
     height: 600px;
     object-fit: cover;
+    filter: brightness(90%);
 }
 
 .hero-text {
     position: absolute;
     top: 50%;
-    left: 20px;  
+    left: 20px;
     transform: translateY(-50%);
     text-align: left;
 }
 
 .hero-text h2 {
     font-size: 36px;
-    color: white;  
+    color: #EFEFEF;
 }
 
 .go-to-catalog {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 18px;
-    background-color: transparent;  
-    color: white;
-    border: 2px solid white;  
+    background-color: transparent;
+    color: #EFEFEF;
+    border: 2px solid #EFEFEF;
     cursor: pointer;
 }
 
 .go-to-catalog:hover {
-    background-color: rgba(255, 255, 255, 0.2);  
-}
-
-.catalog {
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .trends {
     text-align: left;
-    margin: 50px 0;
-    font-size: 60px; 
-    font-family: 'Lobster', cursive; 
-    color: #333;
+    margin-left: 1.5cm;
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+    color: #414141;
 }
 
-.trends h2{
-    font-size: 72px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.trend-images{
+.trend-images {
     display: flex;
     justify-content: center;
-    gap: 0.1cm;
+    gap: 20px; 
+    flex-wrap: wrap; 
 }
 
-.trend-container{
-    position: relative; 
+
+.trend-container {
+    position: relative;
+    width: 30%;
+    background-color: #EFEFEF;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.trend-image {
+    width: 400px; 
+    height: 400px; 
+    object-fit: cover; 
+    border: 2px solid #a7a098;
+    border-radius: 10px;
+    filter: brightness(90%);
 }
 
 .heart {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.7);
+    width: 40px;
+    height: 40px;
+    background-color: #EFEFEF;
     border-radius: 50%;
-    padding: 8px;
-    z-index: 10;
-    content: "❤"; 
-    font-size: 28px;
-    color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.trend-image {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    margin: 0.1cm 0.2cm 0 0.2cm;
-}
-
-.favorites {
-    font-size: 24px;
-    margin-left: 10px;
-    content: "❤"; 
-    color: black;
-    position: relative; 
-}
-
-heart-counter {
-    font-size: 10px;
-    color: black; 
-    background-color: red; 
-    border-radius: 50%; 
-    padding: 2px 5px; 
-    position: absolute; 
-    top: -8px; 
-    right: -8px; 
-    transform: scale(0.8); 
-    z-index: 1; 
-}
-
-.heart-counter {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+.heart i {
     font-size: 20px;
+    color: #414141;
+}
+
+.heart.active {
+    background-color: #414141;
+}
+
+.heart.active i {
+    color: #EFEFEF;
+}
+
+.trend-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #414141;
+}
+
+.trend-container .subtitle {
+    font-size: 16px;
+    color: #a7a098;
+    margin-bottom: 5px;
+}
+
+.trend-container .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #414141;
+    margin: 10px 0;
+}
+
+.trend-container .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.trend-container .buttons button {
+    width: 130px;
+    padding: 10px 15px;
+    border: 2px solid #414141;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.trend-container .details {
+    background-color: #EFEFEF;
+    color: #414141;
+}
+
+.trend-container .details:hover {
+    background-color: #414141;
+    color: #EFEFEF;
+}
+
+.trend-container .order {
+    background-color: #414141;
+    color: #EFEFEF;
+}
+
+.trend-container .order:hover {
+    background-color: #a7a098;
+}
+
+.flower-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px; 
+    margin-top: 75px;
+}
+
+.flower-section {
+    position: relative;
+    width: 105%;
+    max-width: 2000px; 
+    height: 200px; 
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.overlay-container {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+}
+
+.overlay-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(70%); 
+}
+
+.overlay-text {
+    position: absolute;
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-60%, -50%); 
+    color: white;
+    font-size: 24px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }

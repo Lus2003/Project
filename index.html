@@ -7,6 +7,7 @@
     <title>ЦВЕТОЧНАЯ ФЕЯ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -15,42 +16,103 @@
             <div class="logo">ЦВЕТОЧНАЯ ФЕЯ</div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#catalog">КАТАЛОГ</a></li>
+                    <li><a href="catalog.html" target="_blank">КАТАЛОГ</a></li>
                     <li><a href="#payment">ОПЛАТА И ДОСТАВКА</a></li>
                     <li><a href="#mission">НАША МИССИЯ</a></li>
                     <li><a href="#contacts">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
-            <div class="icons"> <span class="favorites">❤0 </span> <span class="cart">👜</span> </div>
+
+            <span class="favorites">
+                <i class="fa-regular fa-heart"></i>
+                <span class="heart-zero">0</span>
+            </span>
+
+            <span class="cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-zero">0</span>
+            </span>
         </header>
+
         <main>
-            <section class="hero"> <img
-                    src="https://avatars.mds.yandex.net/get-tycoon/13233616/2a00000193eb0db735fbe790ec89c0ad1d26/priority-headline-background"
-                    class="hero-image" alt="Цветочная фея">
+            <section class="hero">
+                <img src="https://avatars.mds.yandex.net/get-tycoon/13233616/2a00000193eb0db735fbe790ec89c0ad1d26/priority-headline-background"
+                    class="hero-image" alt="Цветочная фея - главная картинка">
                 <div class="hero-text">
-                    <h2>Каждый цветок — шаг к счастью!</h2> <button class="go-to-catalog"
-                        onclick="goToCatalog()">ПЕРЕЙТИ В КАТАЛОГ</button>
+                    <h2>Каждый цветок — шаг к счастью!</h2>
+                    <button class="go-to-catalog" onclick="location.href='catalog.html';">ПЕРЕЙТИ В КАТАЛОГ</button>
                 </div>
             </section>
+
             <section class="trends">
                 <h1>ТРЕНДЫ СЕЗОНА</h1>
                 <div class="trend-images">
-                    <div class="trend-container"> <img
-                            src="https://images.pexels.com/photos/931163/pexels-photo-931163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            class="trend-image" alt="Тренд 1"> <span class="heart"
-                            onclick="incrementHeart(this)">❤</span> </div>
-                    <div class="trend-container"> <img
-                            src="https://flores-shop.com.ua/wp-content/uploads/2021/01/kak-oformit-buket-cvetov-2-270x300.jpg"
-                            class="trend-image" alt="Тренд 2"> <span class="heart"
-                            onclick="incrementHeart(this)">❤</span> </div>
-                    <div class="trend-container"> <img
-                            src="https://cvetochniy1.ru/wp-content/uploads/2020/05/PinkFlowerBouq.jpg"
-                            class="trend-image" alt="Тренд 3"> <span class="heart"
-                            onclick="incrementHeart(this)">❤</span> </div>
+                    <div class="trend-container">
+                        <img src="https://images.pexels.com/photos/931163/pexels-photo-931163.jpeg" class="trend-image"
+                            alt="Букет из ранункулюсов">
+                        <span class="heart" onclick="incrementHeart(this)">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <h3>БУКЕТ ИЗ РАНУНКУЛЮСОВ</h3>
+                        <p class="subtitle">Нежнейший белый зефир</p>
+                        <p class="price">от <span>1 750 ₽</span></p>
+                        <div class="buttons">
+                            <button class="details">Подробнее</button>
+                            <button class="order">Заказать</button>
+                        </div>
+                    </div>
+                    <div class="trend-container">
+                        <img src="https://flores-shop.com.ua/wp-content/uploads/2021/01/kak-oformit-buket-cvetov-2-270x300.jpg"
+                            class="trend-image" alt="Букет 'Нежность'">
+                        <span class="heart" onclick="incrementHeart(this)">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <h3>НЕЖНОСТЬ</h3>
+                        <p class="subtitle">Авторский букет для весеннего настроения</p>
+                        <p class="price">6 000 ₽</p>
+                        <div class="buttons">
+                            <button class="details">Подробнее</button>
+                            <button class="order">Заказать</button>
+                        </div>
+                    </div>
+                    <div class="trend-container">
+                        <img src="https://cvetochniy1.ru/wp-content/uploads/2020/05/PinkFlowerBouq.jpg"
+                            class="trend-image" alt="Букет из пионов">
+                        <span class="heart" onclick="incrementHeart(this)">
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <h3>БУКЕТ ИЗ ПИОНОВ</h3>
+                        <p class="subtitle">Розовое облако из пионов</p>
+                        <p class="price">от 1 500 ₽</p>
+                        <div class="buttons">
+                            <button class="details">Подробнее</button>
+                            <button class="order">Заказать</button>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <div class="flower-sections">
+                <section class="flower-section">
+                    <div class="overlay-container">
+                        <img src="https://julietteflowers.de/cdn/shop/files/soft_pink_peonies_near_me.jpg?v=1725355580&width=1445">
+                        <h2 class="overlay-text">БУКЕТЫ ПО ЛЮБОМУ ПОВОДУ</h2>
+                    </div>
+                </section>
+                <section class="flower-section">
+                    <div class="overlay-container">
+                        <img src="https://theflowergirlsmiami.com/cdn/shop/files/TheFlowerGirlsMiami_MiamiFlorist_SummerSunset_Bouquet_RedFlowers_1024x1024.jpg?v=1706567410">
+                        <h2 class="overlay-text">ЦВЕТОЧНЫЕ КОМПОЗИЦИИ</h2>
+                    </div>
+                </section>
+                <section class="flower-section">
+                    <div class="overlay-container">
+                        <img src="images/bridal-bouquet.webp" alt="AI generated bridal bouquet">
+                        <h2 class="overlay-text">БУКЕТЫ НЕВЕСТЫ</h2>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
-
 </html>
