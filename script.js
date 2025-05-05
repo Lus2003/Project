@@ -1,40 +1,75 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let heartCount = localStorage.getItem("heartCount") ? parseInt(localStorage.getItem("heartCount")) : 0;
+    let activeHearts = JSON.parse(localStorage.getItem("activeHearts")) || [];
+    let heartCount = activeHearts.length; // սրտիկների թիվը որոշում ենք ըստ պահվածների
     let cartCount = localStorage.getItem("cartCount") ? parseInt(localStorage.getItem("cartCount")) : 0;
 
     const heartBadge = document.querySelector(".heart-zero");
     const cartBadge = document.querySelector(".cart-zero");
 
     function updateBadgeColor(element) {
-        element.style.backgroundColor = element.innerText.trim() === "0" ? "gray" : "black";
+        if (element.innerText.trim() === "0") {
+            element.classList.remove("active");
+        } else {
+            element.classList.add("active");
+        }
     }
 
     function updateLocalStorage() {
-        localStorage.setItem("heartCount", heartCount);
+        // Եթե սրտիկ չկա, ջնջենք localStorage-ից
+        if (activeHearts.length === 0) {
+            localStorage.removeItem("heartCount");
+            localStorage.removeItem("activeHearts");
+        } else {
+            localStorage.setItem("heartCount", activeHearts.length);
+            localStorage.setItem("activeHearts", JSON.stringify(activeHearts));
+        }
         localStorage.setItem("cartCount", cartCount);
     }
 
-    function resetHeart() {
-        heartCount = 0; 
-        heartBadge.innerText = heartCount;
+    function updateBadges() {
+        heartBadge.innerText = activeHearts.length;
+        cartBadge.innerText = cartCount;
         updateBadgeColor(heartBadge);
-        updateLocalStorage();
+        updateBadgeColor(cartBadge);
     }
 
     function incrementCart() {
         cartCount++;
-        cartBadge.innerText = cartCount;
-        updateBadgeColor(cartBadge);
+        updateBadges();
         updateLocalStorage();
     }
 
-    document.querySelector(".favorites").addEventListener("click", resetHeart);
+    document.querySelector(".cart")?.addEventListener("click", incrementCart);
 
-    document.querySelector(".cart").addEventListener("click", incrementCart);
+    const productHearts = document.querySelectorAll(".trend-container .heart");
 
-    heartBadge.innerText = heartCount;
-    cartBadge.innerText = cartCount;
+    productHearts.forEach((heart, index) => {
+        const heartId = `heart-${index}`;
 
-    updateBadgeColor(heartBadge);
-    updateBadgeColor(cartBadge);
+        if (!heart.hasAttribute("data-id")) {
+            heart.setAttribute("data-id", heartId);
+        }
+
+        if (activeHearts.includes(heartId)) {
+            heart.classList.add("active");
+        }
+
+        heart.addEventListener("click", function (event) {
+            event.stopPropagation();
+            const isActive = heart.classList.contains("active");
+
+            heart.classList.toggle("active");
+
+            if (!isActive) {
+                activeHearts.push(heartId);
+            } else {
+                activeHearts = activeHearts.filter(id => id !== heartId);
+            }
+
+            updateBadges();
+            updateLocalStorage();
+        });
+    });
+
+    updateBadges();
 });

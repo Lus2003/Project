@@ -7,22 +7,23 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #EFEFEF;
+    background-color: #DEDEDE;
     overflow-x: hidden; 
 }
-
 
 .container {
     width: 100%;
     margin: 0 auto;
+    padding: 30px 20px; 
+    background-color: #F5F5F5;
+    border-radius: 8px;
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
-    padding: 20px;
-    background-color: #fff;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -69,7 +70,7 @@ body {
 
 .heart-zero, .cart-zero {
     font-size: 14px;
-    background-color: #414141;
+    background-color: gray;
     color: #EFEFEF;
     border-radius: 50%;
     width: 20px;
@@ -81,6 +82,13 @@ body {
     bottom: -5px;
     right: -10px;
     font-weight: bold;
+    padding: 2px 6px;
+    transition: background-color 0.3s;
+}
+
+.heart-zero.active,
+.cart-zero.active {
+    background-color: black; 
 }
 
 .hero {
@@ -141,16 +149,11 @@ body {
 
 .trend-container {
     position: relative;
-    width: 30%;
-    background-color: #EFEFEF;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    overflow: visible;
 }
 
 .trend-image {
+    position: relative; 
     width: 400px; 
     height: 400px; 
     object-fit: cover; 
@@ -161,8 +164,8 @@ body {
 
 .heart {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 18px;
+    right: 48px;
     width: 40px;
     height: 40px;
     background-color: #EFEFEF;
@@ -172,8 +175,9 @@ body {
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 10; 
 }
+
 
 .heart i {
     font-size: 20px;
@@ -188,29 +192,40 @@ body {
     color: #EFEFEF;
 }
 
+.trend-container{
+    padding: 15px;
+    flex-grow: 1;
+    text-align: left;
+}
+
 .trend-container h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #414141;
+    margin: 10px 0 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #333;
 }
 
 .trend-container .subtitle {
-    font-size: 16px;
-    color: #a7a098;
-    margin-bottom: 5px;
+    margin: 0 0 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #666;
 }
 
 .trend-container .price {
-    font-size: 22px;
-    font-weight: bold;
-    color: #414141;
-    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
 }
 
 .trend-container .buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; 
     gap: 10px;
     margin-top: 10px;
 }
@@ -265,27 +280,28 @@ body {
 .overlay-container {
     position: relative;
     width: 100%;
-    height: 300px; 
+    height: 300px;
     overflow: hidden;
 }
 
 .overlay-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    filter: brightness(70%); 
+    object-fit: cover;
+    filter: brightness(60%);
 }
 
 .overlay-text {
     position: absolute;
     top: 40%; 
     left: 50%; 
-    transform: translate(-60%, -50%); 
+    transform: translate(-50%, -50%); 
     color: white;
     font-size: 24px;
-    font-family: 'Lobster', cursive;
+    font-family: Arial, sans-serif;
     text-align: center;
     padding: 10px 20px;
     border-radius: 5px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
