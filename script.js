@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let activeHearts = JSON.parse(localStorage.getItem("activeHearts")) || [];
-    let heartCount = activeHearts.length; // սրտիկների թիվը որոշում ենք ըստ պահվածների
+    let heartCount = activeHearts.length; 
     let cartCount = localStorage.getItem("cartCount") ? parseInt(localStorage.getItem("cartCount")) : 0;
 
     const heartBadge = document.querySelector(".heart-zero");
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateLocalStorage() {
-        // Եթե սրտիկ չկա, ջնջենք localStorage-ից
         if (activeHearts.length === 0) {
             localStorage.removeItem("heartCount");
             localStorage.removeItem("activeHearts");
