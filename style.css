@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #DEDEDE;
+    background-color: #A7A098;
     overflow-x: hidden; 
 }
 
@@ -15,7 +15,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 30px 20px; 
-    background-color: #F5F5F5;
+    background-color: #EFEFEF;
     border-radius: 8px;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .heart-zero, .cart-zero {
     font-size: 14px;
-    background-color: gray;
+    background-color: #A7A098;
     color: #EFEFEF;
     border-radius: 50%;
     width: 20px;
@@ -88,7 +88,7 @@ body {
 
 .heart-zero.active,
 .cart-zero.active {
-    background-color: black; 
+    background-color: #414141; 
 }
 
 .hero {
@@ -157,7 +157,7 @@ body {
     width: 400px; 
     height: 400px; 
     object-fit: cover; 
-    border: 2px solid #a7a098;
+    border: 2px solid #A7A098;
     border-radius: 10px;
     filter: brightness(90%);
 }
@@ -204,7 +204,7 @@ body {
     font-weight: 500;
     font-size: 16px;
     text-transform: uppercase;
-    color: #333;
+    color: #414141;
 }
 
 .trend-container .subtitle {
@@ -212,14 +212,14 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 14px;
-    color: #666;
+    color: #414141;
 }
 
 .trend-container .price {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    color: #000;
+    color: #414141;
     margin-bottom: 10px;
 }
 
@@ -257,7 +257,7 @@ body {
 }
 
 .trend-container .order:hover {
-    background-color: #a7a098;
+    background-color: #A7A098;
 }
 
 .flower-sections {
@@ -296,7 +296,7 @@ body {
     top: 40%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    color: white;
+    color: #EFEFEF;
     font-size: 24px;
     font-family: Arial, sans-serif;
     text-align: center;
