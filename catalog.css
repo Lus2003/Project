@@ -7,7 +7,7 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #BFB9AF;
+  background-color: #A7A098;
   overflow-x: hidden;
 }
 
@@ -15,7 +15,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 40px;
-  background-color: #F5F5F5;
+  background-color: #EFEFEF;
   border-radius: 8px;
 }
 
@@ -25,7 +25,7 @@ h1 {
   font-family: 'Georgia', serif;
   margin-bottom: 10px;
   letter-spacing: 4px;
-  color: #333;
+  color: #414141;
   font-weight: 400;
 }
 
@@ -54,7 +54,7 @@ h1 {
   background: transparent;
   font-size: 14px;
   font-weight: bold;
-  color: #333;
+  color: #414141;
   cursor: pointer;
   text-align: left;
 }
@@ -70,7 +70,7 @@ h1 {
 .search-bar select {
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #A7A098;
   border-radius: 4px;
 }
 
@@ -78,10 +78,11 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
+  margin-top: 1cm;
 }
 
 .product-card {
-  background-color: white;
+  background-color: #EFEFEF;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -112,20 +113,26 @@ h1 {
 
 .heart {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: white;
-  border: 1px solid #ddd;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: #EFEFEF;
+  border: 1px solid #A7A098;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 5px;
   font-size: 18px;
-  color: #888;
+  color: #A7A098;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .heart:hover {
-  background: #ffebeb;
+  background: #EFEFEF;
   color: red;
 }
 
@@ -134,32 +141,32 @@ h1 {
   flex-grow: 1;
 }
 
-.product-info h3 {
+.product-info h2 {
   margin: 10px 0 5px;
   font-family: 'Georgia', serif;
   font-size: 20px;
-  color: #333;
-  text-align: center;
+  color: #414141;
+  text-align: left;
 }
 
 .product-info p {
   margin: 0 0 10px;
   font-size: 14px;
-  color: #666;
-  text-align: center;
+  color: #A7A098;
+  text-align: left;
 }
 
 .product-info .price {
   font-weight: 600;
   font-size: 16px;
-  color: black;
+  color: #414141;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: last baseline;
   gap: 10px;
   padding: 15px;
   margin-top: auto;
@@ -181,12 +188,59 @@ h1 {
 }
 
 .actions button:first-child {
-  background-color: white;
-  border: 1px solid #aaa;
-  color: #333;
+  background-color: #EFEFEF;
+  border: 1px solid #A7A098;
+  color: #414141;
 }
 
 .actions button:last-child {
-  background-color: #222;
+  background-color: #414141;
+  color: #EFEFEF;
+}
+
+.catalog-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px;
+  background-color: #EFEFEF;
+}
+
+.image-section img {
+  max-width: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.text-section {
+  max-width: 400px;
+  text-align: left;
+}
+
+.text-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #414141;
+}
+
+.text-section p {
+  font-size: 18px;
+  color: #A7A098;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #414141;
+}
+
+.text-section button {
+  background-color: #414141;
   color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
 }
