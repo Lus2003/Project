@@ -72,3 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateBadges();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    fetch(window.location.href)
+        .then(response => {
+            if (!response.ok) {
+                window.location.href = "404.html";
+            }
+        })
+        .catch(() => {
+            window.location.href = "404.html";
+        });
+});
