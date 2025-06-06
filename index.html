@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ЦВЕТОЧНАЯ ФЕЯ — магазин авторских букетов и цветочных композиций.">
     <title>ЦВЕТОЧНАЯ ФЕЯ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -36,19 +37,19 @@
         <main>
             <section class="hero">
                 <img src="https://avatars.mds.yandex.net/get-tycoon/13233616/2a00000193eb0db735fbe790ec89c0ad1d26/priority-headline-background"
-                    class="hero-image" alt="Цветочная фея - главная картинка">
+                     class="hero-image" alt="Цветы на фоне — главная картинка">
                 <div class="hero-text">
-                    <h2>Каждый цветок — шаг к счастью!</h2>
+                    <h1>Каждый цветок — шаг к счастью!</h1>
                     <button class="go-to-catalog" onclick="location.href='catalog.html';">ПЕРЕЙТИ В КАТАЛОГ</button>
                 </div>
             </section>
 
             <section class="trends">
-                <h1>ТРЕНДЫ СЕЗОНА</h1>
+                <h2>Тренды сезона</h2>
                 <div class="trend-images">
                     <div class="trend-container">
-                        <img src="https://images.pexels.com/photos/931163/pexels-photo-931163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="trend-image"
-                            alt="Букет из ранункулюсов">
+                        <img src="https://images.pexels.com/photos/931163/pexels-photo-931163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                             class="trend-image" alt="Букет из ранункулюсов — белый зефир">
                         <span class="heart" data-id="product1">
                             <i class="fa-regular fa-heart"></i>
                         </span>
@@ -62,7 +63,7 @@
                     </div>
                     <div class="trend-container">
                         <img src="https://images.pexels.com/photos/931158/pexels-photo-931158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            class="trend-image" alt="Букет 'Нежность'">
+                             class="trend-image" alt="Букет 'Нежность'">
                         <span class="heart" data-id="product2">
                             <i class="fa-regular fa-heart"></i>
                         </span>
@@ -76,7 +77,7 @@
                     </div>
                     <div class="trend-container">
                         <img src="https://images.pexels.com/photos/931188/pexels-photo-931188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            class="trend-image" alt="Букет из пионов">
+                             class="trend-image" alt="Букет из пионов — розовое облако">
                         <span class="heart" data-id="product3">
                             <i class="fa-regular fa-heart"></i>
                         </span>
@@ -94,26 +95,38 @@
             <div class="flower-sections">
                 <section class="flower-section">
                     <div class="overlay-container">
-                        <img src="https://julietteflowers.de/cdn/shop/files/soft_pink_peonies_near_me.jpg?v=1725355580&width=1445">
+                        <img src="https://julietteflowers.de/cdn/shop/files/soft_pink_peonies_near_me.jpg?v=1725355580&width=1445"
+                             alt="Букеты по любому поводу">
                         <h2 class="overlay-text">БУКЕТЫ ПО ЛЮБОМУ ПОВОДУ</h2>
                     </div>
                 </section>
                 <section class="flower-section">
                     <div class="overlay-container">
-                        <img src="https://theflowergirlsmiami.com/cdn/shop/files/TheFlowerGirlsMiami_MiamiFlorist_SummerSunset_Bouquet_RedFlowers_1024x1024.jpg?v=1706567410">
+                        <img src="https://theflowergirlsmiami.com/cdn/shop/files/TheFlowerGirlsMiami_MiamiFlorist_SummerSunset_Bouquet_RedFlowers_1024x1024.jpg?v=1706567410"
+                             alt="Цветочные композиции">
                         <h2 class="overlay-text">ЦВЕТОЧНЫЕ КОМПОЗИЦИИ</h2>
                     </div>
                 </section>
                 <section class="flower-section">
                     <div class="overlay-container">
-                        <img src="images/bridal-bouquet.webp" alt="AI generated bridal bouquet">
+                        <img src="images/bridal-bouquet.webp" alt="Букет невесты">
                         <h2 class="overlay-text">БУКЕТЫ НЕВЕСТЫ</h2>
                     </div>
                 </section>
             </div>
         </main>
     </div>
-
     <script src="script.js"></script>
+    <script>
+    fetch(window.location.href)
+        .then(response => {
+            if (!response.ok) {
+                window.location.href = "404.html";
+            }
+        })
+        .catch(() => {
+            window.location.href = "404.html";
+        });
+</script>
 </body>
 </html>
