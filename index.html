@@ -14,7 +14,12 @@
     <div class="container">
         <header class="header">
             <div class="logo">ЦВЕТОЧНАЯ ФЕЯ</div>
-            <nav class="nav">
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="nav" id="nav-menu">
                 <ul>
                     <li><a href="catalog.html" target="_blank">КАТАЛОГ</a></li>
                     <li><a href="#payment">ОПЛАТА И ДОСТАВКА</a></li>
@@ -116,17 +121,27 @@
             </div>
         </main>
     </div>
+
     <script src="script.js"></script>
     <script>
-    fetch(window.location.href)
-        .then(response => {
-            if (!response.ok) {
+        // 404 redirect check
+        fetch(window.location.href)
+            .then(response => {
+                if (!response.ok) {
+                    window.location.href = "404.html";
+                }
+            })
+            .catch(() => {
                 window.location.href = "404.html";
-            }
-        })
-        .catch(() => {
-            window.location.href = "404.html";
+            });
+
+        // Burger menu toggle
+        const toggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        toggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
         });
-</script>
+    </script>
 </body>
 </html>
