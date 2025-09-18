@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     let activeHearts = JSON.parse(localStorage.getItem("activeHearts")) || [];
-    let heartCount = activeHearts.length; 
     let cartCount = localStorage.getItem("cartCount") ? parseInt(localStorage.getItem("cartCount")) : 0;
 
     const heartBadge = document.querySelector(".heart-zero");
     const cartBadge = document.querySelector(".cart-zero");
 
+
     function updateBadgeColor(element) {
-        if (element.innerText.trim() === "0") {
+        if (parseInt(element.innerText) === 0) {
             element.classList.remove("active");
         } else {
             element.classList.add("active");
@@ -15,13 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateLocalStorage() {
-        if (activeHearts.length === 0) {
-            localStorage.removeItem("heartCount");
-            localStorage.removeItem("activeHearts");
-        } else {
-            localStorage.setItem("heartCount", activeHearts.length);
-            localStorage.setItem("activeHearts", JSON.stringify(activeHearts));
-        }
+        localStorage.setItem("activeHearts", JSON.stringify(activeHearts));
         localStorage.setItem("cartCount", cartCount);
     }
 
@@ -70,10 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    updateBadges();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
     fetch(window.location.href)
         .then(response => {
             if (!response.ok) {
@@ -83,4 +73,5 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(() => {
             window.location.href = "404.html";
         });
+    updateBadges();
 });
