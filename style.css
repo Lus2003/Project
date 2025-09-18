@@ -418,22 +418,104 @@ body {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+        border-radius: 0;
+    }
+
     .logo {
-        font-size: 36px;
+        font-size: 32px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav li {
+        margin: 0;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .hero-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
     }
 
     .hero-text h1 {
-        font-size: 22px;
+        font-size: 20px;
+        line-height: 1.4;
     }
 
     .go-to-catalog {
+        font-size: 16px;
+        padding: 8px 16px;
+        width: auto;
+        margin: 15px auto 0;
+        display: inline-block;
+    }
+
+    .trends {
+        font-size: 28px;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .trend-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .trend-container {
+        width: 90%;
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .trend-container h3,
+    .trend-container .subtitle,
+    .trend-container .price {
+        text-align: center;
+    }
+
+    .trend-container .buttons {
+        justify-content: center;
+    }
+
+    .trend-container .buttons button {
+        width: 120px;
         font-size: 14px;
-        padding: 6px 12px;
-        width: 100%;
+    }
+
+    .flower-sections {
+        gap: 30px;
     }
 
     .overlay-text {
         font-size: 18px;
         padding: 6px 10px;
+        text-align: center;
     }
 }
