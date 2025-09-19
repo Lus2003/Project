@@ -17,6 +17,9 @@
     <div class="container">
         <header class="header">
             <div class="logo">ЦВЕТОЧНАЯ ФЕЯ</div>
+            
+            <div class="menu-toggle">☰</div>
+
             <nav class="nav">
                 <ul>
                     <li><a href="catalog.html" target="_blank">КАТАЛОГ</a></li>
@@ -120,17 +123,6 @@
         </main>
     </div>
     <script src="script.js"></script>
-    <script>
-        fetch(window.location.href)
-            .then(response => {
-                if (!response.ok) {
-                    window.location.href = "404.html";
-                }
-            })
-            .catch(() => {
-                window.location.href = "404.html";
-            });
-    </script>
 </body>
 
-</html>  
+</html>
