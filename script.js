@@ -5,7 +5,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const heartBadge = document.querySelector(".heart-zero");
     const cartBadge = document.querySelector(".cart-zero");
 
+    // === Catalog Panel ===
+    const catalogPanel = document.createElement("div");
+    catalogPanel.classList.add("catalog-panel");
+    catalogPanel.innerHTML = `
+        <div class="catalog-overlay"></div>
+        <div class="catalog-content">
+            <span class="close-panel">&times;</span>
+            <iframe src="catalog.html"></iframe>
+        </div>
+    `;
+    document.body.appendChild(catalogPanel);
 
+    const overlay = catalogPanel.querySelector(".catalog-overlay");
+    const closePanel = catalogPanel.querySelector(".close-panel");
+
+    function openCatalog() {
+        catalogPanel.classList.add("open");
+    }
+
+    function closeCatalog() {
+        catalogPanel.classList.remove("open");
+    }
+
+    document.querySelector(".go-to-catalog")?.addEventListener("click", openCatalog);
+    document.querySelector('a[href="catalog.html"]')?.addEventListener("click", function (e) {
+        e.preventDefault();
+        openCatalog();
+    });
+
+    overlay.addEventListener("click", closeCatalog);
+    closePanel.addEventListener("click", closeCatalog);
+
+    // === Functions for favorites & cart ===
     function updateBadgeColor(element) {
         if (parseInt(element.innerText) === 0) {
             element.classList.remove("active");
@@ -64,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // 404 redirect check
     fetch(window.location.href)
         .then(response => {
             if (!response.ok) {
@@ -73,5 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(() => {
             window.location.href = "404.html";
         });
+
     updateBadges();
 });
