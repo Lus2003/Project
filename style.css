@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* --- Base --- */
 body {
     font-family: 'Cormorant Garamond', serif;
     line-height: 1.6;
@@ -12,6 +13,7 @@ body {
     color: #414141;
 }
 
+/* --- Container --- */
 .container {
     width: 100%;
     margin: 0 auto;
@@ -20,6 +22,7 @@ body {
     border-radius: 10px;
 }
 
+/* --- Header --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -61,6 +64,7 @@ body {
     color: #A7A098;
 }
 
+/* --- Icons (heart, cart) --- */
 .favorites, .cart {
     position: relative;
     font-size: 1.8rem;
@@ -91,6 +95,7 @@ body {
     background-color: #414141;
 }
 
+/* --- Hero section --- */
 .hero {
     position: relative;
     text-align: left;
@@ -132,7 +137,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-
+/* --- Trends Section --- */
 .trends {
     text-align: left;
     margin: 60px 0 20px 3vw;
@@ -148,28 +153,44 @@ body {
     flex-wrap: wrap;
 }
 
+/* --- Each Trend Item --- */
 .trend-container {
     position: relative;
     flex-basis: 30%;
     min-width: 280px;
     text-align: left;
     overflow: hidden;
+    background-color: #EFEFEF;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.trend-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Trend Image --- */
 .trend-image {
     width: 100%;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border: 2px solid #A7A098;
-    border-radius: 10px;
-    filter: brightness(90%);
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s, filter 0.3s;
+    display: block;
 }
 
+.trend-image:hover {
+    filter: brightness(95%);
+}
 
+/* --- Heart icon on image --- */
 .heart {
     position: absolute;
-    top: 8px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
     width: 40px;
     height: 40px;
     background-color: #EFEFEF;
@@ -196,36 +217,41 @@ body {
     color: #EFEFEF;
 }
 
+/* --- Trend Info --- */
 .trend-container h3 {
-    margin: 10px 0 5px;
+    margin: 10px 15px 5px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    color: #414141;
 }
 
 .trend-container .subtitle {
-    margin: 0 0 10px;
+    margin: 0 15px 10px;
     font-weight: 300;
     font-size: 0.9rem;
+    color: #A7A098;
 }
 
 .trend-container .price {
-    font-weight: 600;
+    margin: 0 15px 10px;
+    font-weight: bold;
     font-size: 1rem;
-    margin-bottom: 10px;
+    color: #414141;
 }
 
+/* --- Buttons --- */
 .trend-container .buttons {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
+    margin: 10px 15px 15px;
     flex-wrap: wrap;
 }
 
 .trend-container .buttons button {
     flex: 1 1 45%;
     padding: 10px;
-    border: 2px solid #414141;
+    border: none;
     font-size: 0.95rem;
     font-weight: bold;
     cursor: pointer;
@@ -236,6 +262,7 @@ body {
 .trend-container .details {
     background-color: #EFEFEF;
     color: #414141;
+    border: 1px solid #A7A098;
 }
 
 .trend-container .details:hover {
@@ -250,8 +277,10 @@ body {
 
 .trend-container .order:hover {
     background-color: #A7A098;
+    color: #EFEFEF;
 }
 
+/* --- Flower Sections (Bottom) --- */
 .flower-sections {
     display: flex;
     flex-direction: column;
@@ -267,6 +296,12 @@ body {
     height: 300px;
     overflow: hidden;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.flower-section:hover {
+    transform: scale(1.01);
 }
 
 .overlay-container img {
@@ -288,6 +323,7 @@ body {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* --- Responsive --- */
 @media (max-width: 1024px) {
     .logo { font-size: 5vw; }
     .hero-image { height: 60vh; }
