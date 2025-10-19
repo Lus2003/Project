@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* --- Base --- */
 body {
     font-family: 'Cormorant Garamond', serif;
     line-height: 1.6;
@@ -13,7 +12,6 @@ body {
     color: #414141;
 }
 
-/* --- Container --- */
 .container {
     width: 100%;
     margin: 0 auto;
@@ -22,7 +20,6 @@ body {
     border-radius: 10px;
 }
 
-/* --- Header --- */
 .header {
     display: flex;
     justify-content: space-between;
@@ -64,7 +61,6 @@ body {
     color: #A7A098;
 }
 
-/* --- Icons (heart, cart) --- */
 .favorites, .cart {
     position: relative;
     font-size: 1.8rem;
@@ -95,7 +91,6 @@ body {
     background-color: #414141;
 }
 
-/* --- Hero section --- */
 .hero {
     position: relative;
     text-align: left;
@@ -137,7 +132,6 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* --- Trends Section --- */
 .trends {
     text-align: left;
     margin: 60px 0 20px 3vw;
@@ -153,7 +147,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* --- Each Trend Item --- */
 .trend-container {
     position: relative;
     flex-basis: 30%;
@@ -171,7 +164,6 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* --- Trend Image --- */
 .trend-image {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -186,7 +178,6 @@ body {
     filter: brightness(95%);
 }
 
-/* --- Heart icon on image --- */
 .heart {
     position: absolute;
     top: 10px;
@@ -217,7 +208,6 @@ body {
     color: #EFEFEF;
 }
 
-/* --- Trend Info --- */
 .trend-container h3 {
     margin: 10px 15px 5px;
     font-weight: 600;
@@ -240,7 +230,6 @@ body {
     color: #414141;
 }
 
-/* --- Buttons --- */
 .trend-container .buttons {
     display: flex;
     gap: 10px;
@@ -280,7 +269,6 @@ body {
     color: #EFEFEF;
 }
 
-/* --- Flower Sections (Bottom) --- */
 .flower-sections {
     display: flex;
     flex-direction: column;
@@ -323,7 +311,6 @@ body {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Responsive --- */
 @media (max-width: 1024px) {
     .logo { font-size: 5vw; }
     .hero-image { height: 60vh; }
