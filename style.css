@@ -61,7 +61,8 @@ body {
     color: #A7A098;
 }
 
-.favorites, .cart {
+.favorites,
+.cart {
     position: relative;
     font-size: 1.8rem;
     display: inline-flex;
@@ -69,7 +70,8 @@ body {
     margin-right: 10px;
 }
 
-.heart-zero, .cart-zero {
+.heart-zero,
+.cart-zero {
     font-size: 0.8rem;
     background-color: #A7A098;
     color: #EFEFEF;
@@ -311,23 +313,77 @@ body {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 1024px) {
-    .logo { font-size: 5vw; }
-    .hero-image { height: 60vh; }
-    .hero-text h1 { font-size: 3vw; }
-    .trend-container { flex-basis: 45%; }
+.mobile-menu-icon,
+.mobile-nav {
+    display: none;
 }
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
-        text-align: center;
+        position: relative;
     }
 
-    .logo { font-size: 8vw; }
-    .nav ul { flex-direction: column; gap: 10px; }
-    .hero-image { height: 50vh; }
+    .logo {
+        font-size: 8vw;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #EFEFEF;
+        padding: 80px 30px;
+        z-index: 1000;
+        overflow-y: auto;
+        transition: transform 0.4s ease;
+        transform: translateX(-100%);
+    }
+
+    .mobile-nav.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .mobile-nav ul {
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+    }
+
+    .mobile-nav a {
+        font-size: 1.2rem;
+        color: #414141;
+        text-decoration: none;
+    }
+
+    .close-menu {
+        cursor: pointer;
+        font-size: 28px;
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .favorites,
+    .cart {
+        display: none;
+    }
+
+    .hero-image {
+        height: 90vh;
+        object-fit: cover;
+    }
 
     .hero-text {
         left: 50%;
@@ -358,10 +414,10 @@ body {
 
     .trend-container {
         flex-basis: 90%;
+        width: 90%;
     }
 
     .trend-image {
-        aspect-ratio: 1 / 1;
         height: auto;
     }
 
