@@ -120,19 +120,24 @@ body {
     max-width: 80%;
 }
 
-.go-to-catalog {
-    margin-top: 20px;
-    padding: 0.8em 1.5em;
-    font-size: 1.1rem;
-    background-color: transparent;
-    color: #EFEFEF;
-    border: 2px solid #EFEFEF;
+/* Neumorphism button style */
+button, .go-to-catalog {
+    padding: 12px 25px;
+    border-radius: 12px;
+    background: #EFEFEF;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15),
+                -4px -4px 10px rgba(255,255,255,0.7);
+    color: #414141;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.go-to-catalog:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+button:hover, .go-to-catalog:hover {
+    box-shadow: inset 4px 4px 10px rgba(0,0,0,0.2),
+                inset -4px -4px 10px rgba(255,255,255,0.7);
 }
 
 .trends {
@@ -242,13 +247,6 @@ body {
 
 .trend-container .buttons button {
     flex: 1 1 45%;
-    padding: 10px;
-    border: none;
-    font-size: 0.95rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s ease-in-out;
 }
 
 .trend-container .details {
