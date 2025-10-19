@@ -17,6 +17,11 @@
     <div class="container">
         <header class="header">
             <div class="logo">ЦВЕТОЧНАЯ ФЕЯ</div>
+            
+            <div class="mobile-menu-icon" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
             <nav class="nav">
                 <ul>
                     <li><a href="catalog.html" target="_blank">КАТАЛОГ</a></li>
@@ -36,6 +41,20 @@
                 <span class="cart-zero">0</span>
             </span>
         </header>
+
+        <nav class="mobile-nav" id="mobileNav">
+            <div class="close-menu" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
+            <ul>
+                <li><a href="catalog.html">КАТАЛОГ</a></li>
+                <li><a href="#">БУКЕТ ПО ЛЮБОМУ ПОВОДУ</a></li>
+                <li><a href="#">БУКЕТЫ НЕВЕСТЫ</a></li>
+                <li><a href="#">ЦВЕТОЧНЫЕ КОМПОЗИЦИИ</a></li>
+                <li><a href="#payment">ОПЛАТА И ДОСТАВКА</a></li>
+                <li><a href="#mission">НАША МИССИЯ</a></li>
+                <li><a href="#contacts">КОНТАКТЫ</a></li>
+            </ul>
+            <p class="menu-footer">ЦВЕТЫ, КОТОРЫЕ ДЕЛАЮТ ВАС СЧАСТЛИВЫМИ</p>
+        </nav>
 
         <main>
             <section class="hero">
@@ -64,6 +83,7 @@
                             <button class="order">Заказать</button>
                         </div>
                     </div>
+
                     <div class="trend-container">
                         <img src="https://images.pexels.com/photos/931158/pexels-photo-931158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                             class="trend-image" alt="Букет 'Нежность'">
@@ -78,6 +98,7 @@
                             <button class="order">Заказать</button>
                         </div>
                     </div>
+
                     <div class="trend-container">
                         <img src="https://images.pexels.com/photos/931188/pexels-photo-931188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                             class="trend-image" alt="Букет из пионов — розовое облако">
@@ -103,6 +124,7 @@
                         <h2 class="overlay-text">БУКЕТЫ ПО ЛЮБОМУ ПОВОДУ</h2>
                     </div>
                 </section>
+
                 <section class="flower-section">
                     <div class="overlay-container">
                         <img src="https://theflowergirlsmiami.com/cdn/shop/files/TheFlowerGirlsMiami_MiamiFlorist_SummerSunset_Bouquet_RedFlowers_1024x1024.jpg?v=1706567410"
@@ -110,6 +132,7 @@
                         <h2 class="overlay-text">ЦВЕТОЧНЫЕ КОМПОЗИЦИИ</h2>
                     </div>
                 </section>
+
                 <section class="flower-section">
                     <div class="overlay-container">
                         <img src="images/bridal-bouquet.webp" alt="Букет невесты">
